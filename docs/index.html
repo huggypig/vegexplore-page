@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>VegExplore · 管理后台</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #4b2c82, #7b3fa0);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .login-card {
+      width: 90%;
+      max-width: 380px;
+      padding: 32px 28px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .login-card h1 {
+      text-align: center;
+      margin-bottom: 28px;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 6px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .form-group input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin: 16px 0 24px;
+      opacity: 0.9;
+    }
+
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .options a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .options a:hover {
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 999px;
+      background: #fff;
+      color: #5a2d82;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background: #f3f3f3;
+    }
+
+    .error-message {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 14px;
+      color: #ffd6d6;
+      display: none;
+    }
+
+    footer {
+      margin-top: 36px;
+      font-size: 14px;
+      opacity: 0.75;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-card">
+    <h1>VegExplore</h1>
+
+    <div class="form-group">
+      <label for="username">用户名 / 邮箱</label>
+      <input id="username" type="text" placeholder="请输入用户名或邮箱" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">密码</label>
+      <input id="password" type="password" placeholder="请输入密码" />
+    </div>
+
+    <div class="options">
+      <label>
+        <input type="checkbox" />
+        记住我
+      </label>
+      <a href="javascript:void(0)">忘记密码</a>
+    </div>
+
+    <button class="login-btn" onclick="handleLogin()">登 录</button>
+
+    <div id="error" class="error-message">
+      用户名或密码不正确，登录失败！
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2025 VegExplore · 抱抱猪（广州）食品贸易有限公司</div>
+    <div>
+      ICP 备案号：
+      <a href="https://beian.miit.gov.cn" target="_blank">
+        粤ICP备2025485600号-3
+      </a>
+    </div>
+    <!--
+    <div>
+      公安备案号：
+      <a href="https://www.beian.gov.cn" target="_blank">
+        粤公网安备 XXXXXXXXXXXX号
+      </a>
+    </div>
+    -->
+  </footer>
+
+  <script>
+    function handleLogin() {
+      const errorEl = document.getElementById("error");
+      errorEl.style.display = "block";
+    }
+  </script>
+</body>
+</html>
